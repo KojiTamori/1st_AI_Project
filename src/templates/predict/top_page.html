@@ -1,0 +1,35 @@
+{% extends 'base_html.html' %}
+
+{% block contents %}
+
+<h2>{{user.corp}} {{user.first_name}}様 マイページ</h2>
+<h2>【学習進捗】</h2>
+
+<table clas="inline-block">
+</table>
+
+<table clas="inline-block">
+</table>
+
+<table>
+<tr>
+  <td>
+    <table class="table-two">
+      <tr>
+        <th>章タイトル</th>
+        <th>回答率</th>
+        <th>正解率</th>
+      </tr>
+      {% for ritsu_ in ritsu %}
+      <tr>
+        <td><p><a href={% url "item:prob_list" ritsu_.0 %}>{{ritsu_.1}}章：{{ritsu_.2}}</a></p></td>
+        <td>{{ritsu_.3}}％</td>
+        <td>{{ritsu_.4}}％</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </td>
+</tr>
+</table>
+
+{% endblock %}

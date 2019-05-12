@@ -1,0 +1,14 @@
+{% extends 'base_html.html' %}
+{% block contents %}
+
+<h2>アップした画像はこちらです。</h2>
+
+{% for predict_result in predict_results %}
+
+<div>
+  <h3>予測結果：{{predict_result.1}}</h3>
+  <img class="preded-image" src="/{{predict_result.0}}" >
+</div>
+
+{% endfor %}
+{% endblock %}
